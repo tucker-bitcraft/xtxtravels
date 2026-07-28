@@ -1,0 +1,18 @@
+---
+import ItineraryLayout from '../../layouts/ItineraryLayout.astro';
+import { trips } from '../../lib/packages.js';
+
+/**
+ * One page per trip in src/packages. The "View Itinerary" button on every
+ * trip card resolves here via the trip's `href`.
+ */
+export function getStaticPaths() {
+  return trips.map((trip) => ({
+    params: { slug: trip.slug },
+    props: { trip },
+  }));
+}
+
+const { trip } = Astro.props;
+---
+<ItineraryLayout trip={trip} />

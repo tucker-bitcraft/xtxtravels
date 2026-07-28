@@ -1,0 +1,90 @@
+{
+  "slug": "ireland",
+  "country": "Ireland",
+  "region": "Atlantic Europe",
+  "blurb": "Weather that arrives sideways, tombs older than the pyramids, and a coastline that rewards anyone willing to stand still in the rain.",
+  "trips": [
+    {
+      "slug": "ghosts-of-the-west-coast",
+      "title": "Ghosts of the West Coast",
+      "styleTag": "Coastal",
+      "summary": "Loftus Hall, the Poulnabrone dolmen, and storm-watching from a clifftop cottage on the Wild Atlantic Way.",
+      "intro": "The west of Ireland is where the country stops being green and starts being geological. We follow the Atlantic edge from Wexford to Clare, staying in places built to withstand the weather rather than hide from it, and timing the itinerary to the storms rather than around them.",
+      "days": 8,
+      "maxGuests": 8,
+      "priceUSD": 4190,
+      "departure": "Oct 3 – 10, 2026",
+      "image": "/images/trips/ghosts-of-the-west-coast.png",
+      "featured": true,
+      "highlights": [
+        "A night at Loftus Hall on the Hook Peninsula",
+        "The Poulnabrone portal tomb at first light, before the coaches",
+        "Two nights storm-watching from a clifftop cottage in Clare",
+        "The Burren's limestone pavement with a botanist"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Dublin", "body": "Transfer south and out of the city. First night on the Wexford coast with a briefing over dinner." },
+        { "day": 2, "title": "The Hook Peninsula", "body": "The oldest working lighthouse in the world, then an evening and overnight at Loftus Hall — the house, its history, and the considerable gap between the two." },
+        { "day": 3, "title": "West Along the Copper Coast", "body": "A slow drive through Waterford's mining coast, with stops at sea stacks and a long walk on an empty strand." },
+        { "day": 4, "title": "Into Clare", "body": "North to the Wild Atlantic Way and our clifftop base. Evening is left open — if the forecast turns, we watch it come in." },
+        { "day": 5, "title": "The Burren", "body": "A full day on the limestone with a botanist: Arctic and Mediterranean plants growing in the same crack in the rock, and the Poulnabrone dolmen at first light." },
+        { "day": 6, "title": "Cliffs and Caves", "body": "The Cliffs of Moher from the northern approach on foot, then the Aillwee cave system in the afternoon." },
+        { "day": 7, "title": "Galway and the Long Way Back", "body": "A morning in Galway city, then east across the midlands. Final dinner outside Dublin." },
+        { "day": 8, "title": "Depart Dublin", "body": "Transfer to the airport. Any departure time works from this base." }
+      ],
+      "included": [
+        "7 nights accommodation, single occupancy",
+        "All ground transport within Ireland",
+        "Loftus Hall overnight and private access",
+        "Botanist and local guiding",
+        "All breakfasts, 5 dinners"
+      ],
+      "notIncluded": [
+        "International airfare",
+        "Travel insurance (required)",
+        "Lunches and personal expenses"
+      ]
+    },
+    {
+      "slug": "ancient-tombs-atlantic-cliffs",
+      "title": "Ancient Tombs & Atlantic Cliffs",
+      "styleTag": "Prehistoric",
+      "summary": "Newgrange at dawn, famine roads through Connemara, and a night in a converted 1800s workhouse.",
+      "intro": "Five thousand years of building, and most of it older than written record. This route runs from the Boyne Valley passage tombs west into Connemara, and it does not flinch from the harder history — the famine roads, the workhouses, the emptied townlands.",
+      "days": 8,
+      "maxGuests": 10,
+      "priceUSD": 4050,
+      "departure": "Apr 18 – 25, 2027",
+      "image": "/images/trips/ancient-tombs-atlantic-cliffs.png",
+      "featured": false,
+      "highlights": [
+        "Newgrange at dawn with an archaeologist",
+        "A night in a sensitively converted 1800s workhouse",
+        "Walking a famine road across Connemara bog",
+        "The Céide Fields — a neolithic farm under the peat"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Dublin", "body": "North to the Boyne Valley. Orientation dinner and an early night — tomorrow starts before sunrise." },
+        { "day": 2, "title": "Newgrange at Dawn", "body": "Into the passage tomb ahead of the day's first visitors, with an archaeologist who has worked the site. Knowth and Dowth in the afternoon." },
+        { "day": 3, "title": "Loughcrew and West", "body": "The hilltop cairns at Loughcrew, then a long westward drive into Mayo through emptying country." },
+        { "day": 4, "title": "The Céide Fields", "body": "A neolithic field system preserved beneath five metres of bog — the oldest known enclosed farmland anywhere. Afternoon on the north Mayo cliffs." },
+        { "day": 5, "title": "The Workhouse", "body": "South into Connemara. Tonight we stay in a converted 1800s workhouse, with an evening talk from a local historian on what the building was built to do." },
+        { "day": 6, "title": "Famine Roads", "body": "A full day walking a relief-scheme road that goes nowhere by design, across bog and under the Twelve Bens." },
+        { "day": 7, "title": "Inishbofin", "body": "A ferry crossing and a day on the island — cliffs, a ruined star fort, and the last dinner of the trip." },
+        { "day": 8, "title": "Depart Dublin", "body": "Cross-country transfer to the airport. Afternoon departures recommended." }
+      ],
+      "included": [
+        "7 nights accommodation, single occupancy",
+        "All ground transport and island ferries",
+        "Dawn access at Newgrange",
+        "Archaeologist and historian guiding",
+        "All breakfasts, 5 dinners"
+      ],
+      "notIncluded": [
+        "International airfare",
+        "Travel insurance (required)",
+        "Lunches and personal expenses"
+      ]
+    }
+  ]
+}

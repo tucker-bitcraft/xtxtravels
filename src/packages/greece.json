@@ -1,0 +1,90 @@
+{
+  "slug": "greece",
+  "country": "Greece",
+  "region": "Mediterranean",
+  "blurb": "The Greece past the ferry terminals — feud towers, oracle sites, and mountain villages that never sold themselves to the season.",
+  "trips": [
+    {
+      "slug": "mani-tower-houses",
+      "title": "Mani's Tower Houses & Spinalonga",
+      "styleTag": "Island",
+      "summary": "The blood-feud tower villages of the Mani Peninsula and a crossing to the former leper colony of Spinalonga.",
+      "intro": "The Mani was, for centuries, effectively ungovernable — a peninsula of stone towers built by families to shoot at each other from. We spend half the trip there and half in Crete, where Spinalonga held Europe's last leper colony until 1957. Both places are quieter than their histories suggest, and better for it.",
+      "days": 9,
+      "maxGuests": 8,
+      "priceUSD": 4780,
+      "departure": "June 6 – 14, 2026",
+      "image": "/images/trips/mani-tower-houses.png",
+      "featured": true,
+      "highlights": [
+        "Staying inside a restored Maniot tower house",
+        "The Diros sea caves by small boat",
+        "A private early crossing to Spinalonga",
+        "Byzantine chapels in the Mani's abandoned inland villages"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Athens", "body": "Transfer to the city and a first evening in Plaka. Briefing over dinner, with the route laid out." },
+        { "day": 2, "title": "South to the Mani", "body": "Out through the Peloponnese, stopping at Mystras' Byzantine ruin before descending into the peninsula proper." },
+        { "day": 3, "title": "The Tower Villages", "body": "Vathia and Kitta on foot — towers built taller than the neighbours' out of pure spite. Tonight we sleep inside a restored one." },
+        { "day": 4, "title": "Diros Caves", "body": "A morning by small boat through flooded limestone chambers, then an afternoon of chapel-hunting in the inland villages." },
+        { "day": 5, "title": "Cape Tenaro", "body": "The southern tip of mainland Greece and, to the ancients, an entrance to the underworld. A walk out to the lighthouse, then back north." },
+        { "day": 6, "title": "Crossing to Crete", "body": "Overnight ferry or short flight to Heraklion, depending on the season. Evening in the old Venetian harbour." },
+        { "day": 7, "title": "Spinalonga", "body": "An early private crossing to the island before the day boats. A guide whose family were among the last residents' descendants walks us through it." },
+        { "day": 8, "title": "The Lasithi Plateau", "body": "Up into the interior — windmills, a cave said to be Zeus' birthplace, and a final dinner in a mountain village." },
+        { "day": 9, "title": "Depart Heraklion", "body": "Transfer to the airport. Connections through Athens are straightforward." }
+      ],
+      "included": [
+        "8 nights accommodation, single occupancy",
+        "All ground transport, ferries, and inter-island transfer",
+        "Private early access to Spinalonga",
+        "Local guiding in both the Mani and Crete",
+        "All breakfasts, 6 dinners"
+      ],
+      "notIncluded": [
+        "International airfare",
+        "Travel insurance (required)",
+        "Lunches and personal expenses"
+      ]
+    },
+    {
+      "slug": "necromanteion",
+      "title": "Necromanteion: Oracle of the Dead",
+      "styleTag": "Ritual Sites",
+      "summary": "The ancient oracle where pilgrims once summoned the dead, plus the cave lakes of Zagori and old Epirus.",
+      "intro": "Epirus is the least-visited corner of mainland Greece and the strangest. The Necromanteion was a working oracle of the dead — pilgrims fasted in darkness for days before being led into the underground chamber. We pair it with the stone villages and gorges of Zagori, which are worth the trip on their own.",
+      "days": 7,
+      "maxGuests": 10,
+      "priceUSD": 3950,
+      "departure": "Sept 26 – Oct 2, 2027",
+      "image": "/images/trips/necromanteion.png",
+      "featured": false,
+      "highlights": [
+        "The Necromanteion's underground chamber with an archaeologist",
+        "Two days in the stone villages of Zagori",
+        "The Vikos Gorge rim walk",
+        "Cave lakes and the Acheron river springs"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Ioannina", "body": "Into Epirus via Athens or Thessaloniki. Evening on the lake and a first dinner in the old town." },
+        { "day": 2, "title": "The Necromanteion", "body": "West to the Acheron. The site, then the descent into the chamber where the dead were said to answer — with an archaeologist on how the illusion was likely built." },
+        { "day": 3, "title": "Acheron Springs", "body": "Wading the river gorge at its source, where the water comes out of the rock cold enough to hurt. Afternoon at Ephyra." },
+        { "day": 4, "title": "Into Zagori", "body": "North into the Pindus range. Forty-six stone villages connected by packhorse bridges; we base in one of the quieter ones." },
+        { "day": 5, "title": "Vikos Gorge", "body": "A full-day rim walk above one of the deepest gorges in the world, with a village lunch at the far end." },
+        { "day": 6, "title": "Cave Lakes and Return", "body": "The Perama caves outside Ioannina, then the lake island and its monasteries. Final dinner by the water." },
+        { "day": 7, "title": "Depart Ioannina", "body": "Transfer to the airport for the connection south." }
+      ],
+      "included": [
+        "6 nights accommodation, single occupancy",
+        "All ground transport within Epirus",
+        "Archaeological site entries and specialist guiding",
+        "Guided gorge walk",
+        "All breakfasts, 4 dinners"
+      ],
+      "notIncluded": [
+        "International airfare",
+        "Travel insurance (required)",
+        "Lunches and personal expenses"
+      ]
+    }
+  ]
+}

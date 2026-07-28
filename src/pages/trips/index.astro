@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TripCard from '../../components/TripCard.astro';
+import { trips } from '../../lib/packages.js';
+---
+<BaseLayout
+  title="Upcoming Trips — Offbeat Voyages"
+  description="Small group departures across Romania, Ireland, and Greece, limited to keep encounters authentic and impact low."
+  active="Trips"
+>
+  <section class="trips-content wrap">
+    <div class="trips-header">
+      <p class="eyebrow">Our Signature Itineraries</p>
+      <h1>Upcoming Trips</h1>
+      <p class="lede">
+        Small group departures limited to ensure authentic local encounters and low impact on
+        fragile regional communities.
+      </p>
+    </div>
+
+    <div class="trips-grid">
+      {trips.map((trip) => <TripCard trip={trip} />)}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .trips-content {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding-block: 80px;
+  }
+
+  .trips-header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .trips-header h1 { font-size: clamp(30px, 4.2vw, 40px); }
+  .trips-header .lede { max-width: 640px; }
+
+  .trips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  @media (max-width: 1100px) {
+    .trips-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 700px) {
+    .trips-grid { grid-template-columns: 1fr; }
+    .trips-content { padding-block: 56px; gap: 36px; }
+  }
+</style>

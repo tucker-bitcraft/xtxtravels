@@ -1,0 +1,183 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+
+# Sveltia CMS — content editing UI for xtrordinary travel.
+# Served at /admin/. See src/pages/admin.astro for the page that boots it.
+#
+# IMPORTANT: every key that exists in src/packages/*.json must be declared as a
+# field below. Sveltia rewrites the whole file on save, so any key missing from
+# this config is silently dropped from the JSON.
+
+backend:
+  name: github
+  repo: tucker-bitcraft/xtxtravels
+  branch: main
+  # Uncomment once the sveltia-cms-auth Worker is deployed. Without it the only
+  # way in is "Sign In with Token" (a GitHub PAT), which is fine for developers
+  # but not for client editors.
+  # base_url: https://sveltia-cms-auth.<subdomain>.workers.dev
+
+# Where uploads land in the repo, and the URL they resolve to on the site.
+media_folder: /public/images
+public_folder: /images
+
+collections:
+  - name: packages
+    label: Destination Packages
+    label_singular: Destination Package
+    description: >-
+      One entry per destination country. Each holds the country blurb plus every
+      trip that runs there. Adding an entry creates a new JSON file in
+      src/packages/ and it flows through to the trips grid automatically.
+    folder: src/packages
+    format: json
+    extension: json
+    create: true
+    # The `slug` field below becomes the filename, so greece.json stays greece.json.
+    identifier_field: country
+    slug: '{{fields.slug}}'
+    summary: '{{country}} — {{region}}'
+    thumbnail: 'trips.*.image'
+    sortable_fields: [country, region]
+    fields:
+      - label: URL Slug
+        name: slug
+        widget: string
+        hint: >-
+          Lowercase, no spaces, hyphens instead — e.g. `greece`. This becomes the
+          filename. Avoid changing it after publishing.
+        pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', 'Lowercase letters, numbers and hyphens only']
+
+      - label: Country
+        name: country
+        widget: string
+        hint: Display name, e.g. Greece. Used as the trips-page filter label.
+
+      - label: Region
+        name: region
+        widget: string
+        hint: e.g. Mediterranean, Western Europe, Eastern Europe.
+
+      - label: Country Blurb
+        name: blurb
+        widget: text
+        hint: One or two sentences describing the destination as a whole.
+
+      - label: Trips
+        name: trips
+        label_singular: Trip
+        widget: list
+        collapsed: auto
+        summary: '{{title}}'
+        thumbnail: image
+        min: 1
+        fields:
+          - label: URL Slug
+            name: slug
+            widget: string
+            hint: >-
+              Lowercase with hyphens — e.g. `mani-tower-houses`. Becomes the page
+              address /trips/<slug>. Must be unique across every package.
+            pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', 'Lowercase letters, numbers and hyphens only']
+
+          - label: Trip Title
+            name: title
+            widget: string
+
+          - label: Style Tag
+            name: styleTag
+            widget: string
+            hint: Short category shown on the trip card, e.g. Island, Underground, Coastal.
+
+          - label: Card Summary
+            name: summary
+            widget: text
+            hint: One sentence. Shown on the trip card in the grid.
+
+          - label: Intro
+            name: intro
+            widget: text
+            hint: >-
+              Opening paragraph on the itinerary page. Plain text — markdown and
+              HTML are not rendered here.
+
+          - label: Days
+            name: days
+            widget: number
+            value_type: int
+            min: 1
+            step: 1
+
+          - label: Max Guests
+            name: maxGuests
+            widget: number
+            value_type: int
+            min: 1
+            step: 1
+
+          - label: Price (USD)
+            name: priceUSD
+            widget: number
+            value_type: int
+            min: 0
+            step: 10
+            hint: Whole dollars, no symbol or commas. Formatted automatically on the site.
+
+          - label: Departure
+            name: departure
+            widget: string
+            hint: Free text as it should read, e.g. "June 6 – 14, 2026".
+
+          - label: Trip Image
+            name: image
+            widget: image
+            media_folder: /public/images/trips
+            public_folder: /images/trips
+            choose_url: false
+            hint: Landscape image. Used on the trip card and as the itinerary hero.
+
+          - label: Feature on Homepage
+            name: featured
+            widget: boolean
+            default: false
+            required: false
+            hint: Featured trips appear in the "Curated Voyages" row on the homepage.
+
+          - label: Highlights
+            name: highlights
+            label_singular: Highlight
+            widget: list
+            field: { label: Highlight, name: highlight, widget: string }
+            hint: Short bullet points listed in the itinerary sidebar.
+
+          - label: Itinerary
+            name: itinerary
+            label_singular: Day
+            widget: list
+            collapsed: auto
+            summary: 'Day {{day}} — {{title}}'
+            min: 1
+            fields:
+              - label: Day Number
+                name: day
+                widget: number
+                value_type: int
+                min: 1
+                step: 1
+              - label: Day Title
+                name: title
+                widget: string
+              - label: Day Description
+                name: body
+                widget: text
+
+          - label: What's Included
+            name: included
+            label_singular: Included Item
+            widget: list
+            field: { label: Item, name: item, widget: string }
+
+          - label: Not Included
+            name: notIncluded
+            label_singular: Excluded Item
+            widget: list
+            field: { label: Item, name: item, widget: string }

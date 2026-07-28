@@ -1,0 +1,33 @@
+---
+/**
+ * Sveltia CMS admin UI, served at /admin/.
+ *
+ * The collection schema lives in public/admin/config.yml, which Astro copies
+ * verbatim to /admin/config.yml. The `cms-config-url` link below points the CMS
+ * at it explicitly rather than relying on path-relative resolution.
+ */
+export const prerender = true;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="noindex" />
+        <link
+            rel="cms-config-url"
+            type="application/yaml"
+            href="/admin/config.yml"
+        />
+        <title>Content Manager · xtrordinary travel</title>
+    </head>
+    <body>
+        <script>
+            // The npm build does not self-initialize, unlike the CDN bundle.
+            import { init } from "@sveltia/cms";
+
+            init();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TripCard from '../components/TripCard.astro';
+import { featuredTrips } from '../lib/packages.js';
+---
+<BaseLayout title="Offbeat Voyages — Travel Where No One Expects" active="Home">
+  <section class="hero wrap">
+    <img class="hero-bg" src="/images/site/hero.png" alt="" width="1536" height="672" />
+    <div class="hero-content">
+      <p class="hero-badge">Unconventional Expeditions</p>
+      <h1>Travel Where No One Expects</h1>
+      <p class="hero-lede">
+        We curate wonders that guidebooks ignore. For the curious, the adventurous, and those who
+        seek the extraordinary. Step off the well-trodden grid.
+      </p>
+      <a class="btn btn--accent" href="/trips">Discover Our Expeditions</a>
+    </div>
+  </section>
+
+  <section class="welcome wrap">
+    <h2>Welcome to Offbeat Voyages</h2>
+    <p class="lede">
+      Traditional travel agencies repeat the same itineraries, overcrowding beautiful places. We
+      choose a different course. We connect you with local families, rare ecosystems, and remote
+      cultural histories, ensuring every voyage leaves a lingering story and a lighter footprint.
+    </p>
+  </section>
+
+  <section class="featured wrap">
+    <div class="section-header">
+      <div class="title-group">
+        <p class="eyebrow">Handpicked Wonders</p>
+        <h2>Curated Voyages</h2>
+      </div>
+      <a class="view-all" href="/trips">View All Trips</a>
+    </div>
+    <div class="featured-row">
+      {featuredTrips.map((trip) => <TripCard trip={trip} variant="featured" />)}
+    </div>
+  </section>
+
+  <section class="cta-banner wrap">
+    <div class="banner-text">
+      <h2>Ready for the road less traveled?</h2>
+      <p>Unlock private access to destinations that feel light-years away from ordinary holiday resorts.</p>
+    </div>
+    <a class="btn btn--white" href="/trips">Browse All Upcoming Trips</a>
+  </section>
+</BaseLayout>
+
+<style>
+  /* --- hero --- */
+
+  .hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 580px;
+    padding-block: 64px;
+    isolation: isolate;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(30, 18, 44, 0.65);
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    max-width: 800px;
+  }
+
+  .hero-badge {
+    background: var(--purple-light);
+    color: var(--purple);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: normal;
+    padding: 6px 12px;
+    border-radius: 100px;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 5vw, 56px);
+    color: var(--white);
+  }
+
+  .hero-lede {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--white);
+    opacity: 0.9;
+  }
+
+  /* --- welcome --- */
+
+  .welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding-block: 80px;
+    text-align: center;
+  }
+  .welcome h2 { font-size: clamp(26px, 3.4vw, 32px); }
+  .welcome .lede { max-width: 720px; }
+
+  /* --- featured --- */
+
+  .featured {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-bottom: 96px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .title-group h2 { font-size: clamp(26px, 3.4vw, 32px); }
+
+  .view-all {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--purple);
+    text-decoration: underline;
+  }
+
+  .featured-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  /* --- cta banner --- */
+
+  .cta-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+    padding-block: 64px;
+    background: var(--purple);
+  }
+
+  .banner-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 800px;
+  }
+  .banner-text h2 {
+    font-size: clamp(23px, 3vw, 28px);
+    color: var(--white);
+  }
+  .banner-text p {
+    font-size: 16px;
+    color: var(--purple-light);
+  }
+
+  @media (max-width: 1100px) {
+    .featured-row { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 700px) {
+    .featured-row { grid-template-columns: 1fr; }
+    .welcome { padding-block: 56px; }
+  }
+</style>

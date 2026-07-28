@@ -1,0 +1,158 @@
+---
+/**
+ * Trip card, rendered from a src/packages entry.
+ *
+ * The Figma board draws two bottom rows for the same card: the homepage
+ * shows the departure window, the trips listing shows the "View Itinerary"
+ * action. Both link through to the itinerary page either way.
+ */
+interface Props {
+  trip: {
+    slug: string;
+    title: string;
+    summary: string;
+    country: string;
+    image: string;
+    href: string;
+    priceLabel: string;
+    metaLabel: string;
+    departure: string;
+  };
+  variant?: 'featured' | 'listing';
+}
+
+const { trip, variant = 'listing' } = Astro.props;
+---
+<article class="trip-card card" data-country={trip.country}>
+  <div class="card-top">
+    <a class="trip-image" href={trip.href} tabindex="-1" aria-hidden="true">
+      <img src={trip.image} alt="" width="1344" height="768" loading="lazy" />
+    </a>
+    <div class="card-details">
+      <div class="card-metadata">
+        <span class="tag">{trip.country}</span>
+        <span class="card-meta-text">{trip.metaLabel}</span>
+      </div>
+      <h3 class="card-title">
+        <a href={trip.href}>{trip.title}</a>
+      </h3>
+      <p class="card-summary">{trip.summary}</p>
+    </div>
+  </div>
+
+  <div class="card-bottom">
+    <div class="price-group">
+      <span class="price-label">Total Cost</span>
+      <span class="price-value">{trip.priceLabel}</span>
+    </div>
+    {variant === 'featured' ? (
+      <span class="departure">{trip.departure}</span>
+    ) : (
+      <a class="btn btn--primary btn--sm" href={trip.href}>
+        View Itinerary<span class="visually-hidden"> for {trip.title}</span>
+      </a>
+    )}
+  </div>
+</article>
+
+<style>
+  .trip-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: clip;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .trip-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(30, 18, 44, 0.08);
+  }
+
+  .card-top {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .trip-image {
+    display: block;
+    height: 220px;
+  }
+  .trip-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px;
+  }
+
+  .card-metadata {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .card-meta-text {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    line-height: normal;
+    white-space: nowrap;
+  }
+
+  .card-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: normal;
+  }
+  .card-title a { transition: color 0.2s ease; }
+  .card-title a:hover { color: var(--purple); }
+
+  .card-summary {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+
+  .card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px;
+    border-top: 1px solid var(--line);
+  }
+
+  .price-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    line-height: normal;
+  }
+  .price-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .price-value {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--purple);
+  }
+
+  .departure {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--purple);
+    line-height: normal;
+    text-align: right;
+  }
+</style>

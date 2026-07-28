@@ -1,0 +1,312 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { trips } from '../lib/packages.js';
+
+// The inquiry form has no submit endpoint yet — give the <form> an `action`
+// pointing at a form handler (an Astro endpoint, Formspree, or the CRM)
+// before this goes live.
+
+const details = [
+  {
+    icon: '/icons/phone.svg',
+    label: 'Call Sarah Directly',
+    value: '+1 (800) 555-OBVT',
+    href: 'tel:+18005556268',
+  },
+  {
+    icon: '/icons/mail.svg',
+    label: 'Email Consultation',
+    value: 'sarah@offbeatvoyages.com',
+    href: 'mailto:sarah@offbeatvoyages.com',
+  },
+  {
+    icon: '/icons/map-pin.svg',
+    label: 'Base Office',
+    value: 'Seattle, WA (By Appointment Only)',
+    href: null,
+  },
+];
+---
+<BaseLayout
+  title="Contact — Offbeat Voyages"
+  description="Start planning your voyage. We respond to all customized inquiries within 24 hours."
+  active="Contact"
+>
+  <section class="contact-layout wrap">
+    <form class="contact-form card">
+      <div class="form-header">
+        <h1>Start Planning Your Voyage</h1>
+        <p class="form-sub">Tell us where you want to go. We'll design the itinerary of a lifetime.</p>
+      </div>
+
+      <div class="form-fields">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Alex Rivera" required />
+        </div>
+
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input id="email" name="email" type="email" placeholder="alex@voyages.com" required />
+        </div>
+
+        <div class="split-fields">
+          <div class="field">
+            <label for="destination">Preferred Destination</label>
+            <input
+              id="destination"
+              name="destination"
+              type="text"
+              list="trip-options"
+              placeholder="e.g. Transylvania After Dark"
+            />
+            <datalist id="trip-options">
+              {trips.map((trip) => <option value={trip.title}>{trip.country}</option>)}
+            </datalist>
+          </div>
+
+          <div class="field">
+            <label for="dates">Target Dates</label>
+            <input id="dates" name="dates" type="text" placeholder="e.g. September 2026" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="group">Group Size</label>
+          <input id="group" name="group" type="text" placeholder="How many companions?" />
+        </div>
+
+        <div class="field">
+          <label for="message">Message / Style of Travel</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            placeholder="Let us know what kind of adventures you usually love or specific things you wish to experience..."
+          ></textarea>
+        </div>
+      </div>
+
+      <button class="btn btn--primary send-btn" type="submit">Send Inquiry</button>
+    </form>
+
+    <aside class="contact-info">
+      <div class="info-header">
+        <p class="eyebrow">Direct Line</p>
+        <h2>Get In Touch</h2>
+        <p class="lede">
+          Whether you are ready to book an itinerary or simply have a few curious questions about
+          safety, gear, or conditions — drop a line.
+        </p>
+      </div>
+
+      <ul class="contact-details">
+        {details.map((detail) => (
+          <li class="detail">
+            <span class="info-icon">
+              <img src={detail.icon} alt="" width="18" height="18" />
+            </span>
+            <span class="detail-text">
+              <span class="detail-label">{detail.label}</span>
+              {detail.href ? (
+                <a class="detail-value" href={detail.href}>{detail.value}</a>
+              ) : (
+                <span class="detail-value">{detail.value}</span>
+              )}
+            </span>
+          </li>
+        ))}
+      </ul>
+
+      <p class="guarantee">
+        <span class="guarantee-icon">
+          <img src="/icons/clock.svg" alt="" width="24" height="24" />
+        </span>
+        <span>
+          <strong>Guaranteed Response:</strong> Due to active exploration, we respond to all
+          customized inquiries within 24 hours.
+        </span>
+      </p>
+    </aside>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 440px;
+    gap: 64px;
+    align-items: start;
+    padding-block: 80px;
+  }
+
+  /* --- form --- */
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 48px;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-panel);
+  }
+
+  .form-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .form-header h1 { font-size: clamp(24px, 3vw, 28px); }
+  .form-sub {
+    font-size: 15px;
+    color: var(--muted);
+  }
+
+  .form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .field label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: normal;
+  }
+
+  .field input,
+  .field textarea {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--ink);
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    transition: border-color 0.2s ease;
+  }
+  .field input {
+    height: 46px;
+    padding-inline: 16px;
+  }
+  .field textarea {
+    min-height: 120px;
+    padding: 16px;
+    line-height: 1.5;
+    resize: vertical;
+  }
+  .field input::placeholder,
+  .field textarea::placeholder { color: var(--muted); }
+  .field input:focus,
+  .field textarea:focus { border-color: var(--purple); }
+
+  .split-fields {
+    display: flex;
+    gap: 20px;
+  }
+
+  .send-btn {
+    width: 100%;
+    padding: 14px 32px;
+  }
+
+  /* --- info panel --- */
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 24px;
+  }
+
+  .info-header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .info-header h2 { font-size: clamp(28px, 3.6vw, 36px); }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .detail {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    background: var(--tint);
+    border-radius: 20px;
+  }
+
+  .detail-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    line-height: normal;
+    min-width: 0;
+  }
+  .detail-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+  }
+  .detail-value {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--ink);
+    overflow-wrap: anywhere;
+  }
+  a.detail-value:hover { color: var(--purple); }
+
+  .guarantee {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: var(--purple);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--white);
+  }
+  .guarantee-icon { flex-shrink: 0; }
+  .guarantee strong { color: var(--purple-light); }
+
+  @media (max-width: 1100px) {
+    .contact-layout {
+      grid-template-columns: 1fr;
+      gap: 48px;
+      padding-block: 56px;
+    }
+    .contact-info { padding-top: 0; }
+  }
+
+  @media (max-width: 620px) {
+    .contact-form { padding: 28px; }
+    .split-fields { flex-direction: column; gap: 20px; }
+  }
+</style>

@@ -1,0 +1,141 @@
+---
+interface Props {
+  active?: string;
+}
+
+const { active } = Astro.props;
+
+const links = [
+  { label: 'Home', href: '/' },
+  { label: 'Trips', href: '/trips' },
+  { label: 'About', href: '/about' },
+  { label: 'Reviews', href: '/reviews' },
+  { label: 'Contact', href: '/contact' },
+];
+---
+<header class="site-header wrap">
+  <a class="logo" href="/">
+    <span class="logo-mark">
+      <img src="/icons/compass.svg" alt="" width="22" height="22" />
+    </span>
+    <span class="logo-text">
+      <span class="logo-name">Offbeat Voyages</span>
+      <span class="logo-tagline">Unconventional Paths</span>
+    </span>
+  </a>
+
+  <nav class="nav" aria-label="Primary">
+    {links.map((link) => (
+      <a
+        href={link.href}
+        class:list={['nav-link', { 'is-active': link.label === active }]}
+        aria-current={link.label === active ? 'page' : undefined}
+      >
+        {link.label}
+      </a>
+    ))}
+  </nav>
+
+  <a class="btn btn--primary header-cta" href="/contact">Book Consultation</a>
+</header>
+
+<style>
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    height: 90px;
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    background: var(--purple);
+    border-radius: var(--radius-md);
+  }
+  .logo-mark img { width: 22px; height: 22px; }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    line-height: normal;
+  }
+  .logo-name {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--ink);
+  }
+  .logo-tagline {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+
+  .nav-link {
+    padding-block: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: normal;
+    color: var(--muted);
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease;
+  }
+  .nav-link:hover { color: var(--purple); }
+  .nav-link.is-active {
+    color: var(--purple);
+    font-weight: 700;
+    border-bottom-color: var(--purple);
+  }
+
+  .header-cta {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 20px;
+    white-space: nowrap;
+  }
+
+  /* The single-row header runs out of room before the tablet breakpoint, so
+     the nav wraps to its own line rather than squeezing the logo or the CTA. */
+  @media (max-width: 900px) {
+    .site-header {
+      height: auto;
+      flex-wrap: wrap;
+      padding-block: 16px;
+      row-gap: 12px;
+    }
+    .nav {
+      order: 3;
+      width: 100%;
+      gap: 24px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .nav { gap: 18px; }
+    .nav-link { font-size: 14px; }
+  }
+</style>

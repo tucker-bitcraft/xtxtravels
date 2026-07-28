@@ -1,0 +1,369 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+/**
+ * Itinerary detail page shell.
+ *
+ * The Figma board stops at the "View Itinerary" button, so this template
+ * extends the same design system rather than reproducing a frame: the header
+ * band borrows the hero treatment, the day list reuses the card surface, and
+ * the closing CTA matches the homepage banner.
+ */
+interface Props {
+  trip: {
+    title: string;
+    country: string;
+    region: string;
+    summary: string;
+    intro: string;
+    image: string;
+    days: number;
+    maxGuests: number;
+    departure: string;
+    priceLabel: string;
+    highlights: string[];
+    itinerary: { day: number; title: string; body: string }[];
+    included: string[];
+    notIncluded: string[];
+  };
+}
+
+const { trip } = Astro.props;
+---
+<BaseLayout
+  title={`${trip.title} — Offbeat Voyages`}
+  description={trip.summary}
+  active="Trips"
+>
+  <section class="itinerary-hero wrap">
+    <img class="hero-bg" src={trip.image} alt="" width="1344" height="768" />
+    <div class="hero-content">
+      <a class="back-link" href="/trips">← All trips</a>
+      <p class="hero-badge">{trip.country} · {trip.region}</p>
+      <h1>{trip.title}</h1>
+      <p class="hero-lede">{trip.summary}</p>
+    </div>
+  </section>
+
+  <section class="facts wrap">
+    <dl class="fact-row">
+      <div class="fact">
+        <dt>Duration</dt>
+        <dd>{trip.days} days</dd>
+      </div>
+      <div class="fact">
+        <dt>Group size</dt>
+        <dd>Max {trip.maxGuests} guests</dd>
+      </div>
+      <div class="fact">
+        <dt>Next departure</dt>
+        <dd>{trip.departure}</dd>
+      </div>
+      <div class="fact">
+        <dt>Total cost</dt>
+        <dd class="fact-price">{trip.priceLabel}</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="itinerary-body wrap">
+    <div class="body-main">
+      <p class="intro">{trip.intro}</p>
+
+      <h2 class="section-title">Day by Day</h2>
+      <ol class="days">
+        {trip.itinerary.map((day) => (
+          <li class="day card">
+            <span class="day-number">Day {day.day}</span>
+            <h3 class="day-title">{day.title}</h3>
+            <p class="day-body">{day.body}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+
+    <aside class="body-aside">
+      <div class="aside-card card">
+        <h2 class="aside-title">Trip Highlights</h2>
+        <ul class="highlights">
+          {trip.highlights.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+
+      <div class="aside-card card">
+        <h2 class="aside-title">What's Included</h2>
+        <ul class="check-list">
+          {trip.included.map((item) => <li>{item}</li>)}
+        </ul>
+        <h2 class="aside-title aside-title--spaced">Not Included</h2>
+        <ul class="check-list check-list--muted">
+          {trip.notIncluded.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </aside>
+  </section>
+
+  <section class="cta-banner wrap">
+    <div class="banner-text">
+      <h2>Interested in {trip.title}?</h2>
+      <p>Departures cap at {trip.maxGuests} guests. Start a conversation and we will hold you a place.</p>
+    </div>
+    <a class="btn btn--white" href="/contact">Book a Consultation</a>
+  </section>
+</BaseLayout>
+
+<style>
+  /* --- hero --- */
+
+  .itinerary-hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 440px;
+    padding-block: 64px;
+    isolation: isolate;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .itinerary-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, rgba(30, 18, 44, 0.45), rgba(30, 18, 44, 0.8));
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    max-width: 800px;
+  }
+
+  .back-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--purple-light);
+  }
+  .back-link:hover { color: var(--white); }
+
+  .hero-badge {
+    background: var(--purple-light);
+    color: var(--purple);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: normal;
+    padding: 6px 12px;
+    border-radius: 100px;
+  }
+
+  .itinerary-hero h1 {
+    font-size: clamp(30px, 4.6vw, 48px);
+    color: var(--white);
+  }
+
+  .hero-lede {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--white);
+    opacity: 0.9;
+  }
+
+  /* --- fact strip --- */
+
+  .facts {
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+    padding-block: 28px;
+  }
+
+  .fact-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin: 0;
+  }
+
+  .fact dt {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: normal;
+  }
+  .fact dd {
+    margin: 4px 0 0;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--ink);
+    line-height: normal;
+  }
+  .fact dd.fact-price {
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--purple);
+  }
+
+  /* --- body --- */
+
+  .itinerary-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 380px;
+    gap: 64px;
+    align-items: start;
+    padding-block: 80px;
+  }
+
+  .intro {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  .section-title {
+    margin-top: 48px;
+    margin-bottom: 24px;
+    font-size: 28px;
+  }
+
+  .days {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .day {
+    padding: 24px;
+    border-left: 4px solid var(--purple);
+  }
+
+  .day-number {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--purple);
+    line-height: normal;
+  }
+
+  .day-title {
+    margin-top: 6px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  .day-body {
+    margin-top: 8px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+
+  /* --- aside --- */
+
+  .body-aside {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: sticky;
+    top: 24px;
+  }
+
+  .aside-card { padding: 28px; }
+
+  .aside-title {
+    font-size: 18px;
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+  .aside-title--spaced { margin-top: 24px; }
+
+  .highlights,
+  .check-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 16px 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+
+  .highlights li,
+  .check-list li {
+    padding-left: 20px;
+    position: relative;
+  }
+  .highlights li::before,
+  .check-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--purple-light);
+  }
+  .check-list--muted li::before {
+    background: transparent;
+    border: 1px solid var(--line);
+  }
+
+  /* --- closing banner --- */
+
+  .cta-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+    padding-block: 64px;
+    background: var(--purple);
+  }
+  .banner-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 800px;
+  }
+  .banner-text h2 {
+    font-size: clamp(23px, 3vw, 28px);
+    color: var(--white);
+  }
+  .banner-text p {
+    font-size: 16px;
+    color: var(--purple-light);
+  }
+
+  @media (max-width: 1100px) {
+    .itinerary-body {
+      grid-template-columns: 1fr;
+      gap: 48px;
+      padding-block: 56px;
+    }
+    .body-aside { position: static; }
+    .fact-row { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 560px) {
+    .fact-row { grid-template-columns: 1fr; gap: 16px; }
+  }
+</style>
