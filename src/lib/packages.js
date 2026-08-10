@@ -8,6 +8,8 @@
  * no further wiring.
  */
 
+import { url } from './url.js';
+
 const modules = import.meta.glob('../packages/*.json', { eager: true });
 
 /** All destination packages, ordered alphabetically by country. */
@@ -31,7 +33,10 @@ export const trips = packages.flatMap((pkg) =>
     country: pkg.country,
     countrySlug: pkg.slug,
     region: pkg.region,
-    href: `/trips/${trip.slug}`,
+    // The CMS writes root-absolute media paths (public_folder: /images), so the
+    // base prefix has to go on here rather than in the JSON.
+    image: url(trip.image),
+    href: url(`/trips/${trip.slug}`),
     priceLabel: currency.format(trip.priceUSD),
     metaLabel: `${trip.days}d · Max ${trip.maxGuests} guests`,
   }))

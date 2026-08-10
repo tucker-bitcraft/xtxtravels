@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { url } from '../lib/url.js';
 
 const stats = [
   { value: '84', label: 'Countries Visited' },
@@ -41,7 +42,7 @@ const stats = [
     </div>
 
     <div class="about-photo">
-      <img src="/images/site/agent-portrait.png" alt="Sarah Lin, founder of Offbeat Voyages" width="896" height="1152" />
+      <img src={url('/images/site/7c9258ff839693aabe5367b4d1acf649.png')} alt="Sarah Lin, founder of Offbeat Voyages" width="896" height="1152" />
     </div>
   </section>
 </BaseLayout>

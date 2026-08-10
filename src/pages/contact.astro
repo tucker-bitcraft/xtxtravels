@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { trips } from '../lib/packages.js';
+import { url } from '../lib/url.js';
 
 // The inquiry form has no submit endpoint yet — give the <form> an `action`
 // pointing at a form handler (an Astro endpoint, Formspree, or the CRM)
@@ -8,19 +9,19 @@ import { trips } from '../lib/packages.js';
 
 const details = [
   {
-    icon: '/icons/phone.svg',
+    icon: url('/icons/phone.svg'),
     label: 'Call Sarah Directly',
     value: '+1 (800) 555-OBVT',
     href: 'tel:+18005556268',
   },
   {
-    icon: '/icons/mail.svg',
+    icon: url('/icons/mail.svg'),
     label: 'Email Consultation',
     value: 'sarah@offbeatvoyages.com',
     href: 'mailto:sarah@offbeatvoyages.com',
   },
   {
-    icon: '/icons/map-pin.svg',
+    icon: url('/icons/map-pin.svg'),
     label: 'Base Office',
     value: 'Seattle, WA (By Appointment Only)',
     href: null,
@@ -120,7 +121,7 @@ const details = [
 
       <p class="guarantee">
         <span class="guarantee-icon">
-          <img src="/icons/clock.svg" alt="" width="24" height="24" />
+          <img src={url('/icons/clock.svg')} alt="" width="24" height="24" />
         </span>
         <span>
           <strong>Guaranteed Response:</strong> Due to active exploration, we respond to all

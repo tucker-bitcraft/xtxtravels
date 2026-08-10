@@ -2,10 +2,11 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import TripCard from '../components/TripCard.astro';
 import { featuredTrips } from '../lib/packages.js';
+import { url } from '../lib/url.js';
 ---
 <BaseLayout title="Offbeat Voyages — Travel Where No One Expects" active="Home">
   <section class="hero wrap">
-    <img class="hero-bg" src="/images/site/hero.png" alt="" width="1536" height="672" />
+    <img class="hero-bg" src={url('/images/site/nashville-tennessee-downtown-skyline-at-twilight-royalty-free-image-1670276417.avif')} alt="" width="1536" height="672" />
     <div class="hero-content">
       <p class="hero-badge">Unconventional Expeditions</p>
       <h1>Travel Where No One Expects</h1>
@@ -13,7 +14,7 @@ import { featuredTrips } from '../lib/packages.js';
         We curate wonders that guidebooks ignore. For the curious, the adventurous, and those who
         seek the extraordinary. Step off the well-trodden grid.
       </p>
-      <a class="btn btn--accent" href="/trips">Discover Our Expeditions</a>
+      <a class="btn btn--accent" href={url('/trips')}>Discover Our Expeditions</a>
     </div>
   </section>
 
@@ -32,7 +33,7 @@ import { featuredTrips } from '../lib/packages.js';
         <p class="eyebrow">Handpicked Wonders</p>
         <h2>Curated Voyages</h2>
       </div>
-      <a class="view-all" href="/trips">View All Trips</a>
+      <a class="view-all" href={url('/trips')}>View All Trips</a>
     </div>
     <div class="featured-row">
       {featuredTrips.map((trip) => <TripCard trip={trip} variant="featured" />)}
@@ -44,7 +45,7 @@ import { featuredTrips } from '../lib/packages.js';
       <h2>Ready for the road less traveled?</h2>
       <p>Unlock private access to destinations that feel light-years away from ordinary holiday resorts.</p>
     </div>
-    <a class="btn btn--white" href="/trips">Browse All Upcoming Trips</a>
+    <a class="btn btn--white" href={url('/trips')}>Browse All Upcoming Trips</a>
   </section>
 </BaseLayout>
 

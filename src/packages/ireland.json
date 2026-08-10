@@ -5,85 +5,80 @@
   "blurb": "Weather that arrives sideways, tombs older than the pyramids, and a coastline that rewards anyone willing to stand still in the rain.",
   "trips": [
     {
-      "slug": "ghosts-of-the-west-coast",
-      "title": "Ghosts of the West Coast",
+      "slug": "dublin",
+      "title": "Dublin and the Irish Coast",
       "styleTag": "Coastal",
-      "summary": "Loftus Hall, the Poulnabrone dolmen, and storm-watching from a clifftop cottage on the Wild Atlantic Way.",
-      "intro": "The west of Ireland is where the country stops being green and starts being geological. We follow the Atlantic edge from Wexford to Clare, staying in places built to withstand the weather rather than hide from it, and timing the itinerary to the storms rather than around them.",
-      "days": 8,
+      "summary": "From the charm of Dublin to the dramatic\ncoastline of the Giant’s Causeway, this trip\nblends iconic sights with authentic experiences.",
+      "intro": "Experience the beauty of Ireland on a 7-day\njourney through stunning landscapes and rich\nculture.\n\nFrom the charm of Dublin to the dramatic\ncoastline of the Giant’s Causeway, this trip\nblends iconic sights with authentic experiences.\n\nRelax, explore, and enjoy Ireland—without the\nstress of planning.",
+      "days": 7,
       "maxGuests": 8,
-      "priceUSD": 4190,
-      "departure": "Oct 3 – 10, 2026",
-      "image": "/images/trips/ghosts-of-the-west-coast.png",
+      "priceUSD": 4795,
+      "departure": "June 11 - 17, 2027",
+      "image": "/images/trips/ccd60792176113010385473a353c9649.jpg",
       "featured": true,
       "highlights": [
-        "A night at Loftus Hall on the Hook Peninsula",
-        "The Poulnabrone portal tomb at first light, before the coaches",
-        "Two nights storm-watching from a clifftop cottage in Clare",
-        "The Burren's limestone pavement with a botanist"
+        "Exploring Dublin",
+        "Bushmills Adventure",
+        "Dramatic cliffs and ocean views",
+        "Giant’s Causeway and  Dark Hedges visits"
       ],
       "itinerary": [
-        { "day": 1, "title": "Arrive Dublin", "body": "Transfer south and out of the city. First night on the Wexford coast with a briefing over dinner." },
-        { "day": 2, "title": "The Hook Peninsula", "body": "The oldest working lighthouse in the world, then an evening and overnight at Loftus Hall — the house, its history, and the considerable gap between the two." },
-        { "day": 3, "title": "West Along the Copper Coast", "body": "A slow drive through Waterford's mining coast, with stops at sea stacks and a long walk on an empty strand." },
-        { "day": 4, "title": "Into Clare", "body": "North to the Wild Atlantic Way and our clifftop base. Evening is left open — if the forecast turns, we watch it come in." },
-        { "day": 5, "title": "The Burren", "body": "A full day on the limestone with a botanist: Arctic and Mediterranean plants growing in the same crack in the rock, and the Poulnabrone dolmen at first light." },
-        { "day": 6, "title": "Cliffs and Caves", "body": "The Cliffs of Moher from the northern approach on foot, then the Aillwee cave system in the afternoon." },
-        { "day": 7, "title": "Galway and the Long Way Back", "body": "A morning in Galway city, then east across the midlands. Final dinner outside Dublin." },
-        { "day": 8, "title": "Depart Dublin", "body": "Transfer to the airport. Any departure time works from this base." }
+        {
+          "day": 1,
+          "title": "Welcome to Dublin",
+          "body": "Arrive in Dublin and meet your private driver for transfer to your hotel. After settling in,\nconnect with your group over welcome drinks and dinner as your Ireland journey\nbegins."
+        },
+        {
+          "day": 2,
+          "title": "Dublin Highlights",
+          "body": "Set out on a guided exploration of Dublin’s history and culture. Visit Trinity\nCollege, St. Patrick’s Cathedral, and Dublin Castle, then stroll along Grafton\nStreet. Enjoy a classic Irish meal and finish the day with a perfectly poured pint\nof Guinness."
+        },
+        {
+          "day": 3,
+          "title": "Explore at Your Leisure",
+          "body": "Enjoy a full day in Dublin at your own pace. Start with breakfast at the hotel, then\nspend the day however you choose—shopping along Grafton Street, relaxing in\nSt. Stephen’s Green, or exploring the city’s museums and galleries. Lunch and\ndinner are on your own today, giving you the freedom to experience Dublin your\nway."
+        },
+        {
+          "day": 4,
+          "title": "Northern Coast Journey",
+          "body": "Depart Dublin and travel north through scenic countryside toward the coast.\nStop at the iconic Dark Hedges, then continue to the breathtaking Giant’s\nCauseway to explore its unique coastal formations. End the day in Bushmills,\nwhere you’ll settle into your accommodations for the evening."
+        },
+        {
+          "day": 5,
+          "title": "Bushmills at Your Leisure",
+          "body": "Start your day with breakfast at the hotel, then enjoy a full day in Bushmills at\nyour own pace. Visit the Old Bushmills Distillery, explore the dramatic ruins of\nDunluce Castle, or take in the coastal views at Whiterocks Beach.\n\nLunch and dinner are on your own today, giving you the freedom to explore and\nenjoy the area however you choose."
+        },
+        {
+          "day": 6,
+          "title": "Coastal Adventure & Farewell",
+          "body": "Take in the beauty of Ireland’s northern coastline with a walk to the Carrick-a-\nRede Rope Bridge, where dramatic cliffs and ocean views set the scene.\nAfterward, travel back to Dublin and enjoy a farewell dinner with the group,\ncelebrating the journey and memories made."
+        },
+        {
+          "day": 7,
+          "title": "Departure",
+          "body": "Enjoy one last morning in Dublin before heading to the airport for your flight\nhome.\n\nPrivate transportation will be arranged for a smooth, stress-free departure.\n\nSlán go fóill — until we meet again."
+        }
       ],
       "included": [
-        "7 nights accommodation, single occupancy",
-        "All ground transport within Ireland",
-        "Loftus Hall overnight and private access",
-        "Botanist and local guiding",
-        "All breakfasts, 5 dinners"
+        "7 days & 6 nights boutique accommodations (double occupancy)",
+        "Airport transfer upon arrival",
+        "Private transportation throughout the tour",
+        "Guided city tour of Dublin",
+        "Visit to the Giant’s Causeway",
+        "Visit to the Dark Hedges",
+        "Experience at the Carrick-a-Rede Rope Bridge",
+        "Visit to the Guinness Storehouse",
+        "Two free days to explore at your own pace",
+        "Daily breakfast",
+        "Select group dinners (including welcome & farewell)"
       ],
       "notIncluded": [
-        "International airfare",
+        "Airfare from the US to Ireland Airport Dublin (DUB)",
         "Travel insurance (required)",
-        "Lunches and personal expenses"
-      ]
-    },
-    {
-      "slug": "ancient-tombs-atlantic-cliffs",
-      "title": "Ancient Tombs & Atlantic Cliffs",
-      "styleTag": "Prehistoric",
-      "summary": "Newgrange at dawn, famine roads through Connemara, and a night in a converted 1800s workhouse.",
-      "intro": "Five thousand years of building, and most of it older than written record. This route runs from the Boyne Valley passage tombs west into Connemara, and it does not flinch from the harder history — the famine roads, the workhouses, the emptied townlands.",
-      "days": 8,
-      "maxGuests": 10,
-      "priceUSD": 4050,
-      "departure": "Apr 18 – 25, 2027",
-      "image": "/images/trips/ancient-tombs-atlantic-cliffs.png",
-      "featured": false,
-      "highlights": [
-        "Newgrange at dawn with an archaeologist",
-        "A night in a sensitively converted 1800s workhouse",
-        "Walking a famine road across Connemara bog",
-        "The Céide Fields — a neolithic farm under the peat"
-      ],
-      "itinerary": [
-        { "day": 1, "title": "Arrive Dublin", "body": "North to the Boyne Valley. Orientation dinner and an early night — tomorrow starts before sunrise." },
-        { "day": 2, "title": "Newgrange at Dawn", "body": "Into the passage tomb ahead of the day's first visitors, with an archaeologist who has worked the site. Knowth and Dowth in the afternoon." },
-        { "day": 3, "title": "Loughcrew and West", "body": "The hilltop cairns at Loughcrew, then a long westward drive into Mayo through emptying country." },
-        { "day": 4, "title": "The Céide Fields", "body": "A neolithic field system preserved beneath five metres of bog — the oldest known enclosed farmland anywhere. Afternoon on the north Mayo cliffs." },
-        { "day": 5, "title": "The Workhouse", "body": "South into Connemara. Tonight we stay in a converted 1800s workhouse, with an evening talk from a local historian on what the building was built to do." },
-        { "day": 6, "title": "Famine Roads", "body": "A full day walking a relief-scheme road that goes nowhere by design, across bog and under the Twelve Bens." },
-        { "day": 7, "title": "Inishbofin", "body": "A ferry crossing and a day on the island — cliffs, a ruined star fort, and the last dinner of the trip." },
-        { "day": 8, "title": "Depart Dublin", "body": "Cross-country transfer to the airport. Afternoon departures recommended." }
-      ],
-      "included": [
-        "7 nights accommodation, single occupancy",
-        "All ground transport and island ferries",
-        "Dawn access at Newgrange",
-        "Archaeologist and historian guiding",
-        "All breakfasts, 5 dinners"
-      ],
-      "notIncluded": [
-        "International airfare",
-        "Travel insurance (required)",
-        "Lunches and personal expenses"
+        "Lunches and personal expenses",
+        "Items of a personal nature",
+        "Optional excursions and tours not listed above",
+        "Tips or gratuity for personal items"
       ]
     }
   ]

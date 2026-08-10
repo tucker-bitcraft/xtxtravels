@@ -1,4 +1,6 @@
 ---
+import { url } from '../lib/url.js';
+
 interface Props {
   active?: string;
 }
@@ -6,17 +8,17 @@ interface Props {
 const { active } = Astro.props;
 
 const links = [
-  { label: 'Home', href: '/' },
-  { label: 'Trips', href: '/trips' },
-  { label: 'About', href: '/about' },
-  { label: 'Reviews', href: '/reviews' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Home', href: url('/') },
+  { label: 'Trips', href: url('/trips') },
+  { label: 'About', href: url('/about') },
+  { label: 'Reviews', href: url('/reviews') },
+  { label: 'Contact', href: url('/contact') },
 ];
 ---
 <header class="site-header wrap">
-  <a class="logo" href="/">
+  <a class="logo" href={url('/')}>
     <span class="logo-mark">
-      <img src="/icons/compass.svg" alt="" width="22" height="22" />
+      <img src={url('/icons/compass.svg')} alt="" width="22" height="22" />
     </span>
     <span class="logo-text">
       <span class="logo-name">Offbeat Voyages</span>
@@ -36,7 +38,7 @@ const links = [
     ))}
   </nav>
 
-  <a class="btn btn--primary header-cta" href="/contact">Book Consultation</a>
+  <a class="btn btn--primary header-cta" href={url('/contact')}>Book Consultation</a>
 </header>
 
 <style>

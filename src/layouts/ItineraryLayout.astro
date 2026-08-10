@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import { url } from '../lib/url.js';
 
 /**
  * Itinerary detail page shell.
@@ -38,7 +39,7 @@ const { trip } = Astro.props;
   <section class="itinerary-hero wrap">
     <img class="hero-bg" src={trip.image} alt="" width="1344" height="768" />
     <div class="hero-content">
-      <a class="back-link" href="/trips">← All trips</a>
+      <a class="back-link" href={url('/trips')}>← All trips</a>
       <p class="hero-badge">{trip.country} · {trip.region}</p>
       <h1>{trip.title}</h1>
       <p class="hero-lede">{trip.summary}</p>
@@ -108,7 +109,7 @@ const { trip } = Astro.props;
       <h2>Interested in {trip.title}?</h2>
       <p>Departures cap at {trip.maxGuests} guests. Start a conversation and we will hold you a place.</p>
     </div>
-    <a class="btn btn--white" href="/contact">Book a Consultation</a>
+    <a class="btn btn--white" href={url('/contact')}>Book a Consultation</a>
   </section>
 </BaseLayout>
 

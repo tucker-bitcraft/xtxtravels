@@ -1,17 +1,19 @@
 ---
+import { url } from '../lib/url.js';
+
 const socials = [
-  { label: 'Instagram', icon: '/icons/instagram.svg', href: 'https://instagram.com' },
-  { label: 'Facebook', icon: '/icons/facebook.svg', href: 'https://facebook.com' },
-  { label: 'Twitter', icon: '/icons/twitter.svg', href: 'https://twitter.com' },
+  { label: 'Instagram', icon: url('/icons/instagram.svg'), href: 'https://instagram.com' },
+  { label: 'Facebook', icon: url('/icons/facebook.svg'), href: 'https://facebook.com' },
+  { label: 'Twitter', icon: url('/icons/twitter.svg'), href: 'https://twitter.com' },
 ];
 
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer wrap">
   <div class="footer-top">
-    <a class="footer-logo" href="/">
+    <a class="footer-logo" href={url('/')}>
       <span class="footer-mark">
-        <img src="/icons/compass-light.svg" alt="" width="18" height="18" />
+        <img src={url('/icons/compass-light.svg')} alt="" width="18" height="18" />
       </span>
       <span class="footer-name">Offbeat Voyages</span>
     </a>

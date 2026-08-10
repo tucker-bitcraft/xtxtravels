@@ -7,6 +7,8 @@
  * at it explicitly rather than relying on path-relative resolution.
  */
 export const prerender = true;
+
+import { url } from '../lib/url.js';
 ---
 
 <!doctype html>
@@ -18,7 +20,7 @@ export const prerender = true;
         <link
             rel="cms-config-url"
             type="application/yaml"
-            href="/admin/config.yml"
+            href={url('/admin/config.yml')}
         />
         <title>Content Manager · xtrordinary travel</title>
     </head>

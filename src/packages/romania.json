@@ -8,30 +8,61 @@
       "slug": "transylvania-after-dark",
       "title": "Transylvania After Dark",
       "styleTag": "Castles & Crypts",
-      "summary": "Bran Castle by lamplight, wolf-territory hikes, and a candlelit supper in a 14th-century Saxon fortress.",
-      "intro": "Transylvania is not a set piece. It is a working landscape of shepherds, bear tracks, and villages that have kept the same bell tower for six hundred years. We travel it the way it is best understood — slowly, mostly on foot, and often after dark, when the valleys go quiet and the stories start making sense.",
-      "days": 9,
+      "summary": "Romania, where medieval towns, gothic castles, and centuries-old traditions bring history to life.",
+      "intro": "Step into the haunting beauty of Romania, where\nmedieval towns, gothic castles, and centuries-old\ntraditions bring history to life. This immersive women’s\njourney through Transylvania blends dark history, old-\nworld elegance, and unforgettable cultural experiences,\nending in a legendary Halloween night at Bran Castle.\nFrom candlelit dinners and cobblestone streets to hidden\nlegends and castle halls, every moment feels pulled from\nanother era. This isn’t just a trip. It’s an experience you’ll\nnever forget.",
+      "days": 8,
       "maxGuests": 8,
       "priceUSD": 4650,
-      "departure": "Sept 12 – 20, 2026",
+      "departure": "Oct 25 - Nov 1, 2027",
       "image": "/images/trips/transylvania-after-dark.png",
       "featured": true,
       "highlights": [
-        "After-hours access to Bran Castle, lit only by lamps",
+        "Small Women-Only Group Experience",
         "Two days tracking wolf and bear range with a Carpathian biologist",
         "Candlelit supper inside a 14th-century fortified Saxon church",
         "Night walk through Sighișoara's citadel with a local historian"
       ],
       "itinerary": [
-        { "day": 1, "title": "Arrive Bucharest", "body": "Airport transfer and an evening walk through the Lipscani quarter. Group dinner in a cellar restaurant beneath the old merchant district." },
-        { "day": 2, "title": "North into the Carpathians", "body": "We leave the plain behind and climb the Prahova Valley, stopping at Peleș Castle before continuing to our base in Bran." },
-        { "day": 3, "title": "Bran Castle by Lamplight", "body": "Daytime is for the village and its market. After closing, the castle reopens for us alone — no crowds, no electric light, just the corridors and a guide who grew up beneath them." },
-        { "day": 4, "title": "Wolf Territory", "body": "A full day in the Piatra Craiului range with a wildlife biologist, reading tracks and scat and, if the season cooperates, watching a valley from a hide at dusk." },
-        { "day": 5, "title": "Shepherd's Transhumance", "body": "We walk a stretch of the old migration route with a working shepherd, then eat what the flock provides — fresh telemea, polenta, cold plum brandy." },
-        { "day": 6, "title": "The Fortified Churches", "body": "East to the Saxon lands. Viscri and Biertan in the afternoon, then a candlelit supper laid out inside the fortified church at Biertan after the doors close." },
-        { "day": 7, "title": "Sighișoara Citadel", "body": "The last inhabited medieval citadel in Europe. A morning of guild towers and covered stairs, then a night walk through the upper town when the day visitors have gone." },
-        { "day": 8, "title": "Salt and Descent", "body": "A slow return south, stopping at a working salt mine and a roadside monastery. Final dinner in Brașov's old square." },
-        { "day": 9, "title": "Depart Bucharest", "body": "Transfer to Otopeni. Late-afternoon departures recommended." }
+        {
+          "day": 1,
+          "title": "Arrive Bucharest",
+          "body": "Airport transfer and an evening walk through the Lipscani quarter. Group dinner in a cellar restaurant beneath the old merchant district."
+        },
+        {
+          "day": 2,
+          "title": "North into the Carpathians",
+          "body": "We leave the plain behind and climb the Prahova Valley, stopping at Peleș Castle before continuing to our base in Bran."
+        },
+        {
+          "day": 3,
+          "title": "Bran Castle by Lamplight",
+          "body": "Daytime is for the village and its market. After closing, the castle reopens for us alone — no crowds, no electric light, just the corridors and a guide who grew up beneath them."
+        },
+        {
+          "day": 4,
+          "title": "Wolf Territory",
+          "body": "A full day in the Piatra Craiului range with a wildlife biologist, reading tracks and scat and, if the season cooperates, watching a valley from a hide at dusk."
+        },
+        {
+          "day": 5,
+          "title": "Shepherd's Transhumance",
+          "body": "We walk a stretch of the old migration route with a working shepherd, then eat what the flock provides — fresh telemea, polenta, cold plum brandy."
+        },
+        {
+          "day": 6,
+          "title": "The Fortified Churches",
+          "body": "East to the Saxon lands. Viscri and Biertan in the afternoon, then a candlelit supper laid out inside the fortified church at Biertan after the doors close."
+        },
+        {
+          "day": 7,
+          "title": "Sighișoara Citadel",
+          "body": "The last inhabited medieval citadel in Europe. A morning of guild towers and covered stairs, then a night walk through the upper town when the day visitors have gone."
+        },
+        {
+          "day": 8,
+          "title": "Salt and Descent",
+          "body": "A slow return south, stopping at a working salt mine and a roadside monastery. Final dinner in Brașov's old square."
+        }
       ],
       "included": [
         "8 nights accommodation, single occupancy",
@@ -39,46 +70,6 @@
         "Private after-hours castle and church access",
         "Wildlife biologist and local historian guiding",
         "All breakfasts, 6 dinners"
-      ],
-      "notIncluded": [
-        "International airfare",
-        "Travel insurance (required)",
-        "Lunches and personal expenses"
-      ]
-    },
-    {
-      "slug": "saxon-villages-salt-mines",
-      "title": "Saxon Villages & Salt Mines",
-      "styleTag": "Underground",
-      "summary": "Fortified churches, the vast Turda salt cathedral, and Sighișoara's cobbled old town at blue hour.",
-      "intro": "A shorter, quieter route through the Transylvanian plateau — the villages the Saxons built and largely left, and the mines beneath them. This is the trip for travellers who would rather spend three hours in one village than ninety minutes in three.",
-      "days": 7,
-      "maxGuests": 10,
-      "priceUSD": 3890,
-      "departure": "May 8 – 14, 2027",
-      "image": "/images/trips/saxon-villages-salt-mines.png",
-      "featured": false,
-      "highlights": [
-        "The Turda salt mine, 120 metres below the plateau",
-        "Three UNESCO-listed fortified Saxon villages",
-        "Blue-hour photography in the Sighișoara citadel",
-        "A working ceramics kiln in Corund"
-      ],
-      "itinerary": [
-        { "day": 1, "title": "Arrive Cluj-Napoca", "body": "Settle into the old Hungarian quarter. Orientation walk and a first dinner in the university district." },
-        { "day": 2, "title": "Turda Salt Cathedral", "body": "Descend into the mine — an enormous excavated chamber with a lake at the bottom. We stay long after the tour groups cycle out." },
-        { "day": 3, "title": "Onto the Plateau", "body": "East through rolling farmland into Saxon country. Afternoon at Biertan's triple-walled church, evening in a village guesthouse." },
-        { "day": 4, "title": "Viscri and Meșendorf", "body": "Two villages, one lime kiln, and a long lunch with the family that restored the blacksmith's house. Optional afternoon walk between the two." },
-        { "day": 5, "title": "Sighișoara at Blue Hour", "body": "The citadel in the flat light before the streetlamps come on. A photography-forward day with time built in to simply sit." },
-        { "day": 6, "title": "Corund Kilns", "body": "A morning at a working ceramics kiln in the Székely Land, then back west for a final dinner in Cluj." },
-        { "day": 7, "title": "Depart Cluj-Napoca", "body": "Transfer to the airport. Morning departures work well from here." }
-      ],
-      "included": [
-        "6 nights accommodation, single occupancy",
-        "All ground transport within Romania",
-        "Salt mine and fortified church entries",
-        "Local guiding throughout",
-        "All breakfasts, 4 dinners"
       ],
       "notIncluded": [
         "International airfare",
