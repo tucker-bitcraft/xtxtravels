@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@sveltia/cms": "^0.175.0",
-    "astro": "^7.0.5"
+    "@sveltia/cms": "^0.205.0",
+    "astro": "^7.2.10"
   }
 }

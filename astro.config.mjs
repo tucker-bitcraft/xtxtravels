@@ -5,6 +5,6 @@ import { defineConfig } from 'astro/config';
 // passes --site/--base from the Pages API, which overrides these; they are here
 // so local `astro dev` and `astro build` reproduce the deployed URL shape.
 export default defineConfig({
-  site: 'https://www.txttravels.com',
+  site: 'http://www.txttravels.com',
   base: '/',
 });
