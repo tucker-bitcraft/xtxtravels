@@ -107,6 +107,13 @@ collections:
             min: 1
             step: 1
 
+          - label: Nights
+            name: nights
+            widget: number
+            value_type: int
+            step: 1
+            required: false
+
           - label: Max Guests
             name: maxGuests
             widget: number

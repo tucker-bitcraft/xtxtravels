@@ -2,9 +2,9 @@
 import { url } from '../lib/url.js';
 
 const socials = [
-  { label: 'Instagram', icon: url('/icons/instagram.svg'), href: 'https://instagram.com' },
-  { label: 'Facebook', icon: url('/icons/facebook.svg'), href: 'https://facebook.com' },
-  { label: 'Twitter', icon: url('/icons/twitter.svg'), href: 'https://twitter.com' },
+  { label: 'Instagram', icon: url('/icons/instagram.svg'), href: 'https://www.instagram.com/xperiencethextraordinary' },
+  { label: 'Facebook', icon: url('/icons/facebook.svg'), href: 'https://www.facebook.com/people/XperiencetheXtraordinary-travels/61575446506513/' },
+  { label: 'Twitter', icon: url('/icons/linkedin.svg'), href: 'https://www.linkedin.com/in/laura-douglas-86658721a/' },
 ];
 
 const year = new Date().getFullYear();
@@ -22,6 +22,19 @@ const year = new Date().getFullYear();
   <hr class="footer-rule" />
 
   <div class="footer-bottom">
+    <a
+    class="footer-credit"
+    href="https://bitcrafttech.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Made with coffee by Bitcraft Tech"
+  >
+  
+    
+    Made with <span aria-hidden="true">☕</span> by 
+    <img src={url('/icons/bitcraft-clover.png')} alt="Bitcraft" width="20" height="20" />
+    Bitcraft Tech
+  </a>
     <p class="footer-legal">© {year} XTX Travels. All rights reserved.</p>
     <ul class="socials">
       {socials.map((social) => (
@@ -32,7 +45,10 @@ const year = new Date().getFullYear();
         </li>
       ))}
     </ul>
+    
   </div>
+
+  
 </footer>
 
 <style>
@@ -111,4 +127,30 @@ const year = new Date().getFullYear();
     transition: opacity 0.2s ease;
   }
   .socials a:hover { opacity: 1; }
+
+  .footer-credit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    align-self: center;
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: color 0.2s ease, opacity 0.2s ease;
+  }
+
+  .footer-credit img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+  }
+
+  .footer-credit:hover {
+    color: var(--white);
+    opacity: 1;
+  }
 </style>

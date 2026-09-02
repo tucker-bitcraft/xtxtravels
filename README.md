@@ -1,12 +1,12 @@
 ### Updates Todo list
-[ ] Logo
+[x] Logo
 [ ] Contact info
 [ ] Formspree
-[ ] About info (Home/About)
+[1/2] About info (Home/About)
 [ ] Redirect to paypal on trips
 [ ] Add image spots in itinerary
 [ ] Github access
-[ ] Travel time update to days and nights on top
+[x] Travel time update to days and nights on top
 
 # Xtrordinary Travel Experiences
 

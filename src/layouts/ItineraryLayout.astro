@@ -19,6 +19,7 @@ interface Props {
     intro: string;
     image: string;
     days: number;
+    nights?: number;
     maxGuests: number;
     departure: string;
     priceLabel: string;
@@ -50,7 +51,7 @@ const { trip } = Astro.props;
     <dl class="fact-row">
       <div class="fact">
         <dt>Duration</dt>
-        <dd>{trip.days} days</dd>
+        <dd>{trip.days} days/{trip.nights ? trip.nights : trip.days - 1} nights</dd>
       </div>
       <div class="fact">
         <dt>Group size</dt>
